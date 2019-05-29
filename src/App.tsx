@@ -1,7 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
 import WalletConnect from "@walletconnect/browser";
-import WalletConnectQRCodeModal from "@walletconnect/qrcode-modal";
 import { convertUtf8ToHex } from "@walletconnect/utils";
 import { IInternalEvent, IJsonRpcRequest } from "@walletconnect/types";
 import Button from "./components/Button";
@@ -10,6 +9,7 @@ import Wrapper from "./components/Wrapper";
 import Modal from "./components/Modal";
 import Header from "./components/Header";
 import Loader from "./components/Loader";
+import WalletConnectQRCodeModal from "./components/qr-modal";
 import { fonts } from "./styles";
 import {
   apiGetAccountAssets,
@@ -699,10 +699,11 @@ class App extends React.Component<any, any> {
             {!address && !assets.length ? (
               <SLanding center>
                 <h3>
-                  {`Try out WalletConnect`}
-                  <br />
-                  <span>{`v${process.env.REACT_APP_VERSION}`}</span>
+                  {`🌈️ Rainbow WalletConnect Playground 🌈️`}
                 </h3>
+                <p>
+                  {`WalletConnect version: ${process.env.REACT_APP_VERSION}`}
+                </p>
                 <SButtonContainer>
                   <SConnectButton
                     left
